@@ -54,6 +54,8 @@ wpEval( `for ( $i = 0; $i < 20; $i++ ) { wp_insert_post( array( 'post_status' =>
 
 const browser = await chromium.launch( { executablePath: process.env.CHROMIUM || undefined } );
 const context = await browser.newContext( { viewport: { width: 1280, height: 900 } } );
+// Keep the run offline and identical everywhere: the fixture embeds a Vimeo iframe.
+await context.route( ( url ) => ! url.href.startsWith( BASE ), ( route ) => route.abort() );
 const page = await context.newPage();
 const errors = [];
 page.on( 'pageerror', ( e ) => errors.push( e.message ) );
