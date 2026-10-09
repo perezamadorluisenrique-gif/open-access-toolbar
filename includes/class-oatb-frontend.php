@@ -66,7 +66,7 @@ class OATB_Frontend {
 			// Applies the visitor's saved choices before the page paints, so there is no flash.
 			wp_register_script( 'oatb-early', false, array(), OATB_VERSION, false );
 			wp_enqueue_script( 'oatb-early' );
-			wp_add_inline_script( 'oatb-early', $this->early_script( $settings['tools'] ) );
+			wp_add_inline_script( 'oatb-early', $this->early_script( $settings['tools'], $settings['hide_on_mobile'] ) );
 		}
 
 		wp_enqueue_script(
@@ -85,12 +85,14 @@ class OATB_Frontend {
 	/**
 	 * Small inline script that restores the visitor's class-based choices from localStorage.
 	 *
-	 * @param string[] $tools Enabled tools.
+	 * @param string[] $tools          Enabled tools.
+	 * @param bool     $hide_on_mobile Whether the toolbar is hidden on small screens (then nothing is restored there).
 	 * @return string
 	 */
-	private function early_script( array $tools ) {
+	private function early_script( array $tools, $hide_on_mobile ) {
 		$allowed = array_values( array_intersect( self::CLASS_TOOLS, $tools ) );
-		return '(function(){try{var a=' . wp_json_encode( $allowed ) . ',p=JSON.parse(localStorage.getItem("oatb-prefs")||"{}"),t=p&&p.tools||{},c=document.documentElement.classList;'
+		$skip    = $hide_on_mobile ? 'if(window.matchMedia&&matchMedia("(max-width: 600px)").matches){return;}' : '';
+		return '(function(){try{' . $skip . 'var a=' . wp_json_encode( $allowed ) . ',p=JSON.parse(localStorage.getItem("oatb-prefs")||"{}"),t=p&&p.tools||{},c=document.documentElement.classList;'
 			. 'for(var i=0;i<a.length;i++){if(t[a[i]]===true){c.add("oatb-"+a[i].replace(/_/g,"-"));}}}catch(e){}})();';
 	}
 

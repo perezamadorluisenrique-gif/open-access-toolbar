@@ -27,6 +27,12 @@ class OATB_Scanner {
 	const MAX_ISSUES = 50;
 
 	/**
+	 * At most this many posts with problems are stored, so the option stays far
+	 * below MySQL's max_allowed_packet on big sites; the rest are only counted.
+	 */
+	const MAX_POSTS = 500;
+
+	/**
 	 * Post types to scan: public ones with content, except attachments.
 	 *
 	 * @return string[]
@@ -45,7 +51,7 @@ class OATB_Scanner {
 	/**
 	 * Stored results.
 	 *
-	 * @return array{started:int,finished:int,total:int,done:int,posts:array<int,array<string,mixed>>}
+	 * @return array{started:int,finished:int,total:int,done:int,omitted:int,posts:array<int,array<string,mixed>>}
 	 */
 	public static function results() {
 		$saved = get_option( self::OPTION, array() );
@@ -55,6 +61,7 @@ class OATB_Scanner {
 				'finished' => 0,
 				'total'    => 0,
 				'done'     => 0,
+				'omitted'  => 0,
 				'posts'    => array(),
 			),
 			is_array( $saved ) ? $saved : array()
@@ -75,6 +82,7 @@ class OATB_Scanner {
 				'finished' => 0,
 				'total'    => $total,
 				'done'     => 0,
+				'omitted'  => 0,
 				'posts'    => array(),
 			),
 			false
@@ -94,7 +102,9 @@ class OATB_Scanner {
 
 		foreach ( $ids as $id ) {
 			$issues = self::check_post( $id );
-			if ( $issues ) {
+			if ( $issues && ! isset( $results['posts'][ $id ] ) && count( $results['posts'] ) >= self::MAX_POSTS ) {
+				++$results['omitted'];
+			} elseif ( $issues ) {
 				$results['posts'][ $id ] = array(
 					'title'  => get_the_title( $id ),
 					'type'   => get_post_type( $id ),

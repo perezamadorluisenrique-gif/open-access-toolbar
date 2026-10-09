@@ -156,6 +156,48 @@ check( ! /oatb-/.test( await htmlClass() ), 'reset removes every page class' );
 check( Math.abs( ( await probeSize() ) - before ) < 0.1, 'reset restores the text size' );
 check( await shadow( '[aria-pressed="true"]' ).count() === 0, 'reset unpresses every tool' );
 
+// ---------- Phones ----------
+// The whole panel, header included, must fit the visible viewport.
+for ( const [ width, height ] of [ [ 375, 667 ], [ 667, 375 ] ] ) {
+	const phone = await browser.newContext( { viewport: { width, height }, isMobile: true, hasTouch: true } );
+	await phone.route( ( url ) => ! url.href.startsWith( BASE ), ( route ) => route.abort() );
+	const p = await phone.newPage();
+	await p.goto( postUrl );
+	await p.locator( '#oatb-root >> .launcher' ).click();
+	const rect = await p.evaluate( () => {
+		const r = document.getElementById( 'oatb-root' ).shadowRoot.querySelector( '.panel' ).getBoundingClientRect();
+		return { top: r.top, bottom: r.bottom, h: window.innerHeight };
+	} );
+	check( rect.top >= 0 && rect.bottom <= rect.h, `panel fits a ${ width }x${ height } phone (top ${ Math.round( rect.top ) }, bottom ${ Math.round( rect.bottom ) } of ${ rect.h })` );
+	check( await p.locator( '#oatb-root >> .close' ).isVisible(), `close button visible at ${ width }x${ height }` );
+	const touchTools = await p.locator( '#oatb-root >> [data-tool="reading_guide"], [data-tool="big_cursor"]' ).evaluateAll( ( els ) => els.filter( ( e ) => e.offsetParent !== null ).length );
+	check( touchTools === 0, 'reading guide and big cursor hidden on touch screens' );
+	await phone.close();
+}
+
+// "Hide on small screens" must not leave a tool on with no toolbar to undo it.
+const withHide = { enabled: true, hide_on_mobile: true, tools: [ 'text_size', 'line_height', 'underline_links' ], position: 'bottom-right', color: '#1d4ed8', size: 'medium' };
+wp( `option update oatb_settings '${ JSON.stringify( withHide ) }' --format=json` );
+const narrow = await browser.newContext( { viewport: { width: 1000, height: 800 } } );
+await narrow.route( ( url ) => ! url.href.startsWith( BASE ), ( route ) => route.abort() );
+await narrow.addInitScript( () => localStorage.setItem( 'oatb-prefs', JSON.stringify( { tools: { underline_links: true }, text: 2 } ) ) );
+const n = await narrow.newPage();
+await n.goto( postUrl );
+const wideSize = await n.evaluate( () => parseFloat( getComputedStyle( document.getElementById( 'probe' ) ).fontSize ) );
+check( ( await n.evaluate( () => document.documentElement.className ) ).includes( 'oatb-underline-links' ), 'wide screen: saved tool applied' );
+await n.setViewportSize( { width: 500, height: 800 } );
+await n.waitForFunction( () => ! document.documentElement.classList.contains( 'oatb-underline-links' ) );
+check( true, 'narrowing below 600px lifts the saved tool while the toolbar is hidden' );
+const narrowSize = await n.evaluate( () => parseFloat( getComputedStyle( document.getElementById( 'probe' ) ).fontSize ) );
+check( narrowSize < wideSize, `and the text size (${ wideSize }px to ${ narrowSize }px)` );
+await n.goto( postUrl );
+check( ! ( await n.evaluate( () => document.documentElement.className ) ).includes( 'oatb-underline-links' ), 'small screen load: saved tool not restored' );
+await n.setViewportSize( { width: 1000, height: 800 } );
+await n.waitForFunction( () => document.documentElement.classList.contains( 'oatb-underline-links' ) );
+check( true, 'widening again restores it' );
+await narrow.close();
+wp( 'option delete oatb_settings' );
+
 // ---------- Admin ----------
 await page.goto( `${ BASE }/wp-login.php` );
 await page.fill( '#user_login', 'admin' );

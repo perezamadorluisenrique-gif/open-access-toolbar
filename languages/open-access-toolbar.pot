@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-09T04:53:11+00:00\n"
+"POT-Creation-Date: 2026-10-09T05:08:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: open-access-toolbar\n"
@@ -156,7 +156,7 @@ msgstr ""
 
 #: includes/class-oatb-admin.php:193
 #: includes/class-oatb-admin.php:238
-#: includes/class-oatb-frontend.php:141
+#: includes/class-oatb-frontend.php:143
 msgid "Accessibility statement"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgid "Create draft statement page"
 msgstr ""
 
 #: includes/class-oatb-admin.php:230
-#: includes/class-oatb-admin.php:453
+#: includes/class-oatb-admin.php:461
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
@@ -285,63 +285,69 @@ msgid_plural "%s items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-oatb-admin.php:381
-msgid "Item"
-msgstr ""
-
+#. translators: 1: number of items listed, 2: number of further items with problems.
 #: includes/class-oatb-admin.php:382
-msgid "Problems"
+#, php-format
+msgid "The first %1$s items with problems are listed below. %2$s more have problems too; fix these first and check again to see them."
 msgstr ""
 
 #: includes/class-oatb-admin.php:389
+msgid "Item"
+msgstr ""
+
+#: includes/class-oatb-admin.php:390
+msgid "Problems"
+msgstr ""
+
+#: includes/class-oatb-admin.php:397
 msgid "(no title)"
 msgstr ""
 
-#: includes/class-oatb-admin.php:393
+#: includes/class-oatb-admin.php:401
 msgid "Edit"
 msgstr ""
 
-#: includes/class-oatb-admin.php:395
+#: includes/class-oatb-admin.php:403
 msgid "View"
 msgstr ""
 
 #. translators: %s: number of further problems.
-#: includes/class-oatb-admin.php:412
+#: includes/class-oatb-admin.php:420
 #, php-format
 msgid "and %s more"
 msgstr ""
 
-#: includes/class-oatb-admin.php:427
+#: includes/class-oatb-admin.php:435
 msgid "Theme"
 msgstr ""
 
-#: includes/class-oatb-admin.php:428
+#: includes/class-oatb-admin.php:436
 msgid "Checks your home page for things your theme controls."
 msgstr ""
 
-#: includes/class-oatb-admin.php:429
+#: includes/class-oatb-admin.php:437
 msgid "Check my theme"
 msgstr ""
 
 #. translators: %s: error message.
-#: includes/class-oatb-admin.php:484
+#: includes/class-oatb-admin.php:492
 #, php-format
 msgid "Could not load your home page: %s"
 msgstr ""
 
-#: includes/class-oatb-admin.php:491
+#: includes/class-oatb-admin.php:499
 msgid "Pass"
 msgstr ""
 
-#: includes/class-oatb-admin.php:492
+#: includes/class-oatb-admin.php:500
 msgid "Check"
 msgstr ""
 
-#: includes/class-oatb-admin.php:493
+#: includes/class-oatb-admin.php:501
 msgid "Problem"
 msgstr ""
 
-#: includes/class-oatb-admin.php:499
+#: includes/class-oatb-admin.php:507
 msgid "This plugin adds a skip link for visitors (the setting is on)."
 msgstr ""
 
@@ -407,89 +413,89 @@ msgstr ""
 msgid "H%1$d followed by H%2$d"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:135
-#: includes/class-oatb-frontend.php:136
+#: includes/class-oatb-frontend.php:137
+#: includes/class-oatb-frontend.php:138
 msgid "Accessibility tools"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:137
+#: includes/class-oatb-frontend.php:139
 msgid "Close"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:138
+#: includes/class-oatb-frontend.php:140
 msgid "Smaller text"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:139
+#: includes/class-oatb-frontend.php:141
 msgid "Larger text"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:140
+#: includes/class-oatb-frontend.php:142
 msgid "Reset all"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:142
+#: includes/class-oatb-frontend.php:144
 msgid "Skip to content"
 msgstr ""
 
-#: includes/class-oatb-frontend.php:143
+#: includes/class-oatb-frontend.php:145
 msgid "Your choices are saved in this browser only."
 msgstr ""
 
 #. translators: %d: HTTP status code.
-#: includes/class-oatb-scanner.php:175
+#: includes/class-oatb-scanner.php:185
 #, php-format
 msgid "Your home page answered with HTTP status %d."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:221
+#: includes/class-oatb-scanner.php:231
 msgid "Page language is set"
 msgstr ""
 
 #. translators: %s: language code such as en-US.
-#: includes/class-oatb-scanner.php:223
+#: includes/class-oatb-scanner.php:233
 #, php-format
 msgid "The page declares lang=\"%s\"."
 msgstr ""
 
 #. translators: %s: language code such as en-US.
-#: includes/class-oatb-scanner.php:223
+#: includes/class-oatb-scanner.php:233
 msgid "The <html> tag has no lang attribute, so screen readers may read the page in the wrong language. Your theme should print language_attributes()."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:228
+#: includes/class-oatb-scanner.php:238
 msgid "Visitors can zoom"
 msgstr ""
 
-#: includes/class-oatb-scanner.php:229
+#: includes/class-oatb-scanner.php:239
 msgid "The viewport does not block pinch zoom."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:229
+#: includes/class-oatb-scanner.php:239
 msgid "The viewport meta tag blocks zooming (user-scalable=no or a low maximum-scale). Ask your theme author to remove it."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:234
+#: includes/class-oatb-scanner.php:244
 msgid "Skip link"
 msgstr ""
 
-#: includes/class-oatb-scanner.php:235
+#: includes/class-oatb-scanner.php:245
 msgid "One of the first links jumps to a section of the page."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:235
+#: includes/class-oatb-scanner.php:245
 msgid "No \"skip to content\" link found near the top of the page. You can turn on the skip link in the toolbar settings."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:240
+#: includes/class-oatb-scanner.php:250
 msgid "Main content landmark"
 msgstr ""
 
-#: includes/class-oatb-scanner.php:241
+#: includes/class-oatb-scanner.php:251
 msgid "The page marks its main content with <main>."
 msgstr ""
 
-#: includes/class-oatb-scanner.php:241
+#: includes/class-oatb-scanner.php:251
 msgid "No <main> element found, so screen reader users cannot jump straight to the content."
 msgstr ""
 

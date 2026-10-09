@@ -96,7 +96,7 @@ Yes, in **Settings > Accessibility Toolbar**. You can also hide the toolbar on s
 
 = Which content does the check read? =
 
-Published content of every public post type except media attachments. Blocks and shortcodes are rendered first, so images and embeds they produce are checked. Developers can change the list with the `oatb_check_post_types` filter.
+Published content of every public post type except media attachments. Blocks and shortcodes are rendered first, so images and frames they produce are checked. Developers can change the list with the `oatb_check_post_types` filter.
 
 = Can I hide the toolbar on some pages? =
 

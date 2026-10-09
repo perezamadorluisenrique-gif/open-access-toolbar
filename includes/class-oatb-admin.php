@@ -375,6 +375,14 @@ class OATB_Admin {
 								</li>
 							<?php endforeach; ?>
 						</ul>
+						<?php if ( ! empty( $results['omitted'] ) ) : ?>
+							<p class="description">
+								<?php
+								/* translators: 1: number of items listed, 2: number of further items with problems. */
+								echo esc_html( sprintf( __( 'The first %1$s items with problems are listed below. %2$s more have problems too; fix these first and check again to see them.', 'open-access-toolbar' ), number_format_i18n( OATB_Scanner::MAX_POSTS ), number_format_i18n( $results['omitted'] ) ) );
+								?>
+							</p>
+						<?php endif; ?>
 						<table class="widefat striped oatb-results">
 							<thead>
 								<tr>

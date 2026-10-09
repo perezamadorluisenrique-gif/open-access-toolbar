@@ -71,6 +71,10 @@
 
 	var originals = null;
 
+	// True while "hide on small screens" hides the toolbar, so no effect is left on with no way to undo it.
+	var smallScreen = config.hideOnMobile && window.matchMedia ? window.matchMedia( '(max-width: 600px)' ) : null;
+	var suspended = !! ( smallScreen && smallScreen.matches );
+
 	function textElements() {
 		var list = [];
 		var walker = document.createTreeWalker( document.body, NodeFilter.SHOW_TEXT, {
@@ -94,8 +98,9 @@
 		if ( ! enabled.text_size ) {
 			return;
 		}
-		var step = Math.max( 0, Math.min( TEXT_STEPS.length - 1, prefs.text ) );
-		prefs.text = step;
+		prefs.text = Math.max( 0, Math.min( TEXT_STEPS.length - 1, prefs.text ) );
+		// While the toolbar is hidden on a small screen, show the page as designed.
+		var step = suspended ? 0 : prefs.text;
 		if ( ! originals ) {
 			if ( step === 0 ) {
 				return;
@@ -174,6 +179,7 @@
 		if ( ! tool ) {
 			return;
 		}
+		on = on && ! suspended;
 		if ( tool.css ) {
 			root.classList.toggle( cssClass( id ), on );
 		}
@@ -206,7 +212,7 @@
 			'.launcher{width:' + s + 'px;height:' + s + 'px;border-radius:50%;border:2px solid #fff;background:' + c + ';color:' + t + ';cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.35);padding:0;}',
 			'.launcher svg{width:' + Math.round( s * 0.6 ) + 'px;height:' + Math.round( s * 0.6 ) + 'px;fill:currentColor;}',
 			'button:focus-visible,a:focus-visible{outline:3px solid #f59e0b;outline-offset:2px;}',
-			'.panel{position:absolute;' + side + ':0;' + ( vertical === 'top' ? 'top' : 'bottom' ) + ':' + ( s + 12 ) + 'px;width:340px;max-width:calc(100vw - 32px);max-height:calc(100vh - ' + ( s + 48 ) + 'px);overflow:auto;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.3);border:1px solid #d1d5db;}',
+			'.panel{position:absolute;' + side + ':0;' + ( vertical === 'top' ? 'top' : 'bottom' ) + ':' + ( s + 12 ) + 'px;width:340px;max-width:calc(100vw - 32px);max-height:calc(100vh - ' + ( s + 48 ) + 'px);max-height:calc(100dvh - ' + ( s + 48 ) + 'px);overflow:auto;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.3);border:1px solid #d1d5db;}',
 			'.panel[hidden]{display:none;}',
 			'.head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:' + c + ';color:' + t + ';border-radius:11px 11px 0 0;}',
 			'.title{font-weight:700;font-size:16px;margin:0;}',
@@ -229,6 +235,8 @@
 			'.guide{position:fixed;left:0;right:0;height:40px;pointer-events:none;border-top:3px solid #111;border-bottom:3px solid #111;background:rgba(255,235,59,.18);z-index:2147483645;}',
 			'.guide[hidden]{display:none;}',
 			config.hideOnMobile ? '@media (max-width:600px){.wrap{display:none;}}' : '',
+			// Reading guide and big cursor follow a mouse, so touch-only devices don't get them.
+			'@media (hover:none) and (pointer:coarse){[data-tool="reading_guide"],[data-tool="big_cursor"]{display:none;}}',
 			'@media (prefers-reduced-motion:no-preference){.launcher{transition:transform .15s;}.launcher:hover{transform:scale(1.06);}}'
 		].join( '' );
 	}
@@ -236,7 +244,8 @@
 	function escapeHtml( text ) {
 		var div = document.createElement( 'div' );
 		div.textContent = text;
-		return div.innerHTML;
+		// innerHTML escapes & < > only; these strings also go into attributes.
+		return div.innerHTML.replace( /"/g, '&quot;' );
 	}
 
 	function updateSize() {
@@ -397,6 +406,15 @@
 		applyTextSize();
 		updatePressed();
 		updateSize();
+		if ( smallScreen && smallScreen.addEventListener ) {
+			smallScreen.addEventListener( 'change', function () {
+				suspended = smallScreen.matches;
+				Object.keys( enabled ).forEach( function ( id ) {
+					applyTool( id, prefs.tools[ id ] === true );
+				} );
+				applyTextSize();
+			} );
+		}
 	}
 
 	if ( document.readyState === 'loading' ) {
