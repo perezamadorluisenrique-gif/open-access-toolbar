@@ -1,0 +1,132 @@
+/*
+ * Open Access Toolbar: styles applied to the page when a visitor turns a tool on.
+ * Every rule is scoped to a class on <html>, so nothing changes until a tool is used.
+ * The toolbar lives in a shadow root (#oatb-root) and is excluded from these rules.
+ */
+
+/* Skip link (site option). */
+.oatb-skip-link {
+	position: absolute;
+	top: -100px;
+	left: 8px;
+	z-index: 2147483647;
+	padding: 12px 16px;
+	background: #000;
+	color: #fff;
+	font: 600 16px/1.2 system-ui, sans-serif;
+	text-decoration: underline;
+}
+
+.oatb-skip-link:focus {
+	top: 8px;
+	outline: 3px solid #fbbf24;
+	outline-offset: 2px;
+}
+
+/* Visible keyboard focus (site option). */
+html.oatb-site-focus a:focus-visible,
+html.oatb-site-focus button:focus-visible,
+html.oatb-site-focus input:focus-visible,
+html.oatb-site-focus select:focus-visible,
+html.oatb-site-focus textarea:focus-visible,
+html.oatb-site-focus summary:focus-visible,
+html.oatb-site-focus [tabindex]:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+/* Line height. */
+html.oatb-line-height body,
+html.oatb-line-height body *:not(#oatb-root) {
+	line-height: 1.8 !important;
+}
+
+/* Letter and word spacing (the WCAG 1.4.12 text-spacing values). */
+html.oatb-letter-spacing body,
+html.oatb-letter-spacing body *:not(#oatb-root) {
+	letter-spacing: 0.12em !important;
+	word-spacing: 0.16em !important;
+}
+
+/* Readable font: a plain system sans-serif. Icon fonts are left alone. */
+html.oatb-readable-font body,
+html.oatb-readable-font body *:not(#oatb-root):not(i):not([class*="icon"]):not([class*="fa-"]):not([class*="dashicons"]):not([class*="genericon"]):not([class*="material-"]):not([aria-hidden="true"]) {
+	font-family: Verdana, Tahoma, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* High contrast, dark. */
+html.oatb-contrast-dark,
+html.oatb-contrast-dark body,
+html.oatb-contrast-dark body *:not(#oatb-root) {
+	background-color: #000 !important;
+	color: #fff !important;
+	border-color: #fff !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+html.oatb-contrast-dark body a:not(#oatb-root),
+html.oatb-contrast-dark body a *:not(#oatb-root) {
+	color: #ffeb3b !important;
+}
+
+html.oatb-contrast-dark body :is(input, textarea, select, button) {
+	border: 1px solid #fff !important;
+}
+
+/* High contrast, light. */
+html.oatb-contrast-light,
+html.oatb-contrast-light body,
+html.oatb-contrast-light body *:not(#oatb-root) {
+	background-color: #fff !important;
+	color: #000 !important;
+	border-color: #000 !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+html.oatb-contrast-light body a:not(#oatb-root),
+html.oatb-contrast-light body a *:not(#oatb-root) {
+	color: #0000c8 !important;
+}
+
+html.oatb-contrast-light body :is(input, textarea, select, button) {
+	border: 1px solid #000 !important;
+}
+
+/* Grayscale. On the root element a filter does not trap fixed-position elements. */
+html.oatb-grayscale {
+	filter: grayscale(1);
+}
+
+/* Underline links. */
+html.oatb-underline-links body a:not(#oatb-root) {
+	text-decoration: underline !important;
+	text-underline-offset: 0.15em;
+}
+
+/* Highlight focus. */
+html.oatb-highlight-focus body *:not(#oatb-root):focus,
+html.oatb-highlight-focus body *:not(#oatb-root):focus-visible {
+	outline: 3px solid #f59e0b !important;
+	outline-offset: 2px !important;
+	box-shadow: 0 0 0 6px #000 !important;
+}
+
+/* Stop animations and transitions. */
+html.oatb-stop-animations *,
+html.oatb-stop-animations *::before,
+html.oatb-stop-animations *::after {
+	animation-duration: 0.001s !important;
+	animation-delay: 0s !important;
+	animation-iteration-count: 1 !important;
+	transition-duration: 0s !important;
+	transition-delay: 0s !important;
+	scroll-behavior: auto !important;
+}
+
+/* Big cursor (a 48px arrow). */
+html.oatb-big-cursor,
+html.oatb-big-cursor * {
+	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l15 11.5-6.6.9 3.9 7.6-2.9 1.5-3.9-7.7L4 20z' fill='%23000' stroke='%23fff' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 8 4, auto !important;
+}
