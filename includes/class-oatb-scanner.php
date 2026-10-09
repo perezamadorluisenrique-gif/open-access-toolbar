@@ -24,7 +24,7 @@ class OATB_Scanner {
 	/**
 	 * At most this many issues are kept per post.
 	 */
-	const MAX_ISSUES = 50;
+	const MAX_ISSUES = 20;
 
 	/**
 	 * At most this many posts with problems are stored, so the option stays far
