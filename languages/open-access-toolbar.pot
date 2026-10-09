@@ -1,0 +1,552 @@
+# Copyright (C) 2026 Enrique
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Access Toolbar 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/open-access-toolbar\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-09T05:08:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: open-access-toolbar\n"
+
+#. Plugin Name of the plugin
+#: open-access-toolbar.php
+msgid "Open Access Toolbar"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: open-access-toolbar.php
+msgid "https://github.com/perezamadorluisenrique-gif/open-access-toolbar"
+msgstr ""
+
+#. Description of the plugin
+#: open-access-toolbar.php
+msgid "A light, private accessibility toolbar for your visitors (text size, spacing, contrast, readable font and more) plus a checker that finds common accessibility problems in your content. No account, no cloud, no tracking."
+msgstr ""
+
+#. Author of the plugin
+#: open-access-toolbar.php
+msgid "Enrique"
+msgstr ""
+
+#: includes/class-oatb-admin.php:40
+#: includes/class-oatb-admin.php:41
+#: includes/class-oatb-admin.php:122
+msgid "Accessibility Toolbar"
+msgstr ""
+
+#: includes/class-oatb-admin.php:47
+#: includes/class-oatb-admin.php:48
+#: includes/class-oatb-admin.php:315
+msgid "Accessibility Check"
+msgstr ""
+
+#. translators: 1: posts checked so far, 2: total posts.
+#: includes/class-oatb-admin.php:90
+#, php-format
+msgid "Checked %1$d of %2$d"
+msgstr ""
+
+#: includes/class-oatb-admin.php:91
+msgid "Check finished. Loading the results..."
+msgstr ""
+
+#: includes/class-oatb-admin.php:92
+msgid "The check stopped because of an error. Reload the page and try again."
+msgstr ""
+
+#: includes/class-oatb-admin.php:93
+msgid "Checking your home page..."
+msgstr ""
+
+#: includes/class-oatb-admin.php:110
+msgid "Bottom right"
+msgstr ""
+
+#: includes/class-oatb-admin.php:111
+msgid "Bottom left"
+msgstr ""
+
+#: includes/class-oatb-admin.php:112
+msgid "Top right"
+msgstr ""
+
+#: includes/class-oatb-admin.php:113
+msgid "Top left"
+msgstr ""
+
+#: includes/class-oatb-admin.php:116
+msgid "Small"
+msgstr ""
+
+#: includes/class-oatb-admin.php:117
+msgid "Medium"
+msgstr ""
+
+#: includes/class-oatb-admin.php:118
+msgid "Large"
+msgstr ""
+
+#: includes/class-oatb-admin.php:124
+msgid "The toolbar lets each visitor adjust your site to how they read best. Their choices stay in their own browser: no cookies, no account and nothing sent to any server."
+msgstr ""
+
+#: includes/class-oatb-admin.php:125
+msgid "Check your content for accessibility problems"
+msgstr ""
+
+#: includes/class-oatb-admin.php:132
+msgid "Toolbar"
+msgstr ""
+
+#: includes/class-oatb-admin.php:134
+msgid "Show the accessibility toolbar to visitors"
+msgstr ""
+
+#: includes/class-oatb-admin.php:138
+#: includes/class-oatb-admin.php:141
+msgid "Tools"
+msgstr ""
+
+#: includes/class-oatb-admin.php:149
+msgid "Button position"
+msgstr ""
+
+#: includes/class-oatb-admin.php:159
+msgid "Button size"
+msgstr ""
+
+#: includes/class-oatb-admin.php:169
+msgid "Button color"
+msgstr ""
+
+#: includes/class-oatb-admin.php:172
+msgid "The icon is drawn in black or white, whichever has more contrast with this color."
+msgstr ""
+
+#: includes/class-oatb-admin.php:176
+msgid "Phones"
+msgstr ""
+
+#: includes/class-oatb-admin.php:178
+msgid "Hide the toolbar on small screens"
+msgstr ""
+
+#: includes/class-oatb-admin.php:182
+#: includes/class-oatb-admin.php:185
+msgid "Theme fixes"
+msgstr ""
+
+#: includes/class-oatb-admin.php:186
+msgid "Add a \"Skip to content\" link for keyboard users if the theme has none"
+msgstr ""
+
+#: includes/class-oatb-admin.php:187
+msgid "Always show a visible outline on the focused link or button"
+msgstr ""
+
+#: includes/class-oatb-admin.php:188
+msgid "These apply to every visitor, whether or not the toolbar is shown."
+msgstr ""
+
+#: includes/class-oatb-admin.php:193
+#: includes/class-oatb-admin.php:238
+#: includes/class-oatb-frontend.php:143
+msgid "Accessibility statement"
+msgstr ""
+
+#: includes/class-oatb-admin.php:201
+msgid "(none)"
+msgstr ""
+
+#: includes/class-oatb-admin.php:207
+msgid "A published page chosen here is linked from the toolbar."
+msgstr ""
+
+#: includes/class-oatb-admin.php:214
+msgid "Need an accessibility statement?"
+msgstr ""
+
+#: includes/class-oatb-admin.php:215
+msgid "Create a draft page with a statement outline: your commitment, what you have done, known limitations and how visitors can report a problem. Fill in the details, then publish it."
+msgstr ""
+
+#: includes/class-oatb-admin.php:219
+msgid "Create draft statement page"
+msgstr ""
+
+#: includes/class-oatb-admin.php:230
+#: includes/class-oatb-admin.php:461
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: includes/class-oatb-admin.php:264
+msgid "Our commitment"
+msgstr ""
+
+#. translators: %s: site name.
+#: includes/class-oatb-admin.php:266
+#, php-format
+msgid "%s wants everyone to be able to use this website, including people who use screen readers, keyboard navigation, magnification or other assistive technology. We aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA."
+msgstr ""
+
+#: includes/class-oatb-admin.php:269
+msgid "What we have done"
+msgstr ""
+
+#: includes/class-oatb-admin.php:270
+msgid "[Describe the steps you have taken, for example: images have text alternatives, headings are used in order, forms have labels, and visitors can adjust text size, spacing and contrast with the accessibility toolbar.]"
+msgstr ""
+
+#: includes/class-oatb-admin.php:273
+msgid "Known limitations"
+msgstr ""
+
+#: includes/class-oatb-admin.php:274
+msgid "[List any parts of the site that are not yet fully accessible, such as older PDF documents or third-party embeds, and when you plan to fix them.]"
+msgstr ""
+
+#: includes/class-oatb-admin.php:277
+msgid "Feedback and contact"
+msgstr ""
+
+#: includes/class-oatb-admin.php:278
+msgid "If you have trouble using any part of this website, please tell us and we will help and work on a fix. [Add an email address, phone number or contact page link.]"
+msgstr ""
+
+#: includes/class-oatb-admin.php:281
+msgid "Date of this statement"
+msgstr ""
+
+#. translators: %s: date.
+#: includes/class-oatb-admin.php:283
+#, php-format
+msgid "This statement was last reviewed on %s."
+msgstr ""
+
+#: includes/class-oatb-admin.php:316
+msgid "Finds common problems in your published content that make it harder to use with a screen reader or keyboard. Automated checks catch only part of what matters, so also test your site with a keyboard and a screen reader."
+msgstr ""
+
+#: includes/class-oatb-admin.php:319
+msgid "Content"
+msgstr ""
+
+#. translators: 1: number of posts, 2: date and time.
+#: includes/class-oatb-admin.php:325
+#, php-format
+msgid "Last check: %1$s posts and pages on %2$s."
+msgstr ""
+
+#: includes/class-oatb-admin.php:332
+msgid "The last check did not finish. Run it again to see complete results."
+msgstr ""
+
+#: includes/class-oatb-admin.php:334
+msgid "Your content has not been checked yet."
+msgstr ""
+
+#: includes/class-oatb-admin.php:337
+msgid "Check again"
+msgstr ""
+
+#: includes/class-oatb-admin.php:337
+msgid "Check my content"
+msgstr ""
+
+#: includes/class-oatb-admin.php:348
+msgid "No problems found in your content by the automated checks."
+msgstr ""
+
+#. translators: 1: "N problems" text, 2: "N items" text.
+#: includes/class-oatb-admin.php:355
+#, php-format
+msgid "%1$s found in %2$s"
+msgstr ""
+
+#. translators: %s: number of problems.
+#: includes/class-oatb-admin.php:357
+#, php-format
+msgid "%s problem"
+msgid_plural "%s problems"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of posts or pages.
+#: includes/class-oatb-admin.php:359
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of items listed, 2: number of further items with problems.
+#: includes/class-oatb-admin.php:382
+#, php-format
+msgid "The first %1$s items with problems are listed below. %2$s more have problems too; fix these first and check again to see them."
+msgstr ""
+
+#: includes/class-oatb-admin.php:389
+msgid "Item"
+msgstr ""
+
+#: includes/class-oatb-admin.php:390
+msgid "Problems"
+msgstr ""
+
+#: includes/class-oatb-admin.php:397
+msgid "(no title)"
+msgstr ""
+
+#: includes/class-oatb-admin.php:401
+msgid "Edit"
+msgstr ""
+
+#: includes/class-oatb-admin.php:403
+msgid "View"
+msgstr ""
+
+#. translators: %s: number of further problems.
+#: includes/class-oatb-admin.php:420
+#, php-format
+msgid "and %s more"
+msgstr ""
+
+#: includes/class-oatb-admin.php:435
+msgid "Theme"
+msgstr ""
+
+#: includes/class-oatb-admin.php:436
+msgid "Checks your home page for things your theme controls."
+msgstr ""
+
+#: includes/class-oatb-admin.php:437
+msgid "Check my theme"
+msgstr ""
+
+#. translators: %s: error message.
+#: includes/class-oatb-admin.php:492
+#, php-format
+msgid "Could not load your home page: %s"
+msgstr ""
+
+#: includes/class-oatb-admin.php:499
+msgid "Pass"
+msgstr ""
+
+#: includes/class-oatb-admin.php:500
+msgid "Check"
+msgstr ""
+
+#: includes/class-oatb-admin.php:501
+msgid "Problem"
+msgstr ""
+
+#: includes/class-oatb-admin.php:507
+msgid "This plugin adds a skip link for visitors (the setting is on)."
+msgstr ""
+
+#: includes/class-oatb-checker.php:36
+msgid "Image without alt text"
+msgstr ""
+
+#: includes/class-oatb-checker.php:37
+msgid "Describe the image in its \"Alternative text\" field. Use empty alt text only for purely decorative images."
+msgstr ""
+
+#: includes/class-oatb-checker.php:40
+msgid "Link with no text"
+msgstr ""
+
+#: includes/class-oatb-checker.php:41
+msgid "Give the link visible text, or alt text on the image inside it, that says where it goes."
+msgstr ""
+
+#: includes/class-oatb-checker.php:44
+msgid "Button with no text"
+msgstr ""
+
+#: includes/class-oatb-checker.php:45
+msgid "Give the button visible text or an accessible name (aria-label)."
+msgstr ""
+
+#: includes/class-oatb-checker.php:48
+msgid "Empty heading"
+msgstr ""
+
+#: includes/class-oatb-checker.php:49
+msgid "Remove the empty heading block or give it text."
+msgstr ""
+
+#: includes/class-oatb-checker.php:52
+msgid "Skipped heading level"
+msgstr ""
+
+#: includes/class-oatb-checker.php:53
+msgid "Use heading levels in order (H2, then H3 inside it) so screen reader users can follow the structure."
+msgstr ""
+
+#: includes/class-oatb-checker.php:56
+msgid "Form field without a label"
+msgstr ""
+
+#: includes/class-oatb-checker.php:57
+msgid "Add a label to the field. Placeholder text alone is not a label."
+msgstr ""
+
+#: includes/class-oatb-checker.php:60
+msgid "Embedded frame without a title"
+msgstr ""
+
+#: includes/class-oatb-checker.php:61
+msgid "Add a title attribute that says what the embed is, for example \"Video: product tour\"."
+msgstr ""
+
+#. translators: 1: previous heading level, 2: this heading level.
+#: includes/class-oatb-checker.php:175
+#, php-format
+msgid "H%1$d followed by H%2$d"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:137
+#: includes/class-oatb-frontend.php:138
+msgid "Accessibility tools"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:139
+msgid "Close"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:140
+msgid "Smaller text"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:141
+msgid "Larger text"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:142
+msgid "Reset all"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:144
+msgid "Skip to content"
+msgstr ""
+
+#: includes/class-oatb-frontend.php:145
+msgid "Your choices are saved in this browser only."
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: includes/class-oatb-scanner.php:185
+#, php-format
+msgid "Your home page answered with HTTP status %d."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:231
+msgid "Page language is set"
+msgstr ""
+
+#. translators: %s: language code such as en-US.
+#: includes/class-oatb-scanner.php:233
+#, php-format
+msgid "The page declares lang=\"%s\"."
+msgstr ""
+
+#. translators: %s: language code such as en-US.
+#: includes/class-oatb-scanner.php:233
+msgid "The <html> tag has no lang attribute, so screen readers may read the page in the wrong language. Your theme should print language_attributes()."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:238
+msgid "Visitors can zoom"
+msgstr ""
+
+#: includes/class-oatb-scanner.php:239
+msgid "The viewport does not block pinch zoom."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:239
+msgid "The viewport meta tag blocks zooming (user-scalable=no or a low maximum-scale). Ask your theme author to remove it."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:244
+msgid "Skip link"
+msgstr ""
+
+#: includes/class-oatb-scanner.php:245
+msgid "One of the first links jumps to a section of the page."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:245
+msgid "No \"skip to content\" link found near the top of the page. You can turn on the skip link in the toolbar settings."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:250
+msgid "Main content landmark"
+msgstr ""
+
+#: includes/class-oatb-scanner.php:251
+msgid "The page marks its main content with <main>."
+msgstr ""
+
+#: includes/class-oatb-scanner.php:251
+msgid "No <main> element found, so screen reader users cannot jump straight to the content."
+msgstr ""
+
+#: includes/class-oatb-settings.php:42
+msgid "Text size"
+msgstr ""
+
+#: includes/class-oatb-settings.php:43
+msgid "Line height"
+msgstr ""
+
+#: includes/class-oatb-settings.php:44
+msgid "Letter spacing"
+msgstr ""
+
+#: includes/class-oatb-settings.php:45
+msgid "Readable font"
+msgstr ""
+
+#: includes/class-oatb-settings.php:46
+msgid "High contrast (dark)"
+msgstr ""
+
+#: includes/class-oatb-settings.php:47
+msgid "High contrast (light)"
+msgstr ""
+
+#: includes/class-oatb-settings.php:48
+msgid "Grayscale"
+msgstr ""
+
+#: includes/class-oatb-settings.php:49
+msgid "Underline links"
+msgstr ""
+
+#: includes/class-oatb-settings.php:50
+msgid "Highlight focus"
+msgstr ""
+
+#: includes/class-oatb-settings.php:51
+msgid "Stop animations"
+msgstr ""
+
+#: includes/class-oatb-settings.php:52
+msgid "Big cursor"
+msgstr ""
+
+#: includes/class-oatb-settings.php:53
+msgid "Reading guide"
+msgstr ""
+
+#: open-access-toolbar.php:51
+msgid "Settings"
+msgstr ""

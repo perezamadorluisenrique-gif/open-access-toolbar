@@ -1,0 +1,20 @@
+.oatb-wrap .oatb-intro { max-width: 780px; font-size: 14px; }
+.oatb-tools { display: grid; grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) ); gap: 6px 16px; max-width: 700px; }
+.oatb-card { background: #fff; border: 1px solid #c3c4c7; border-radius: 4px; padding: 4px 20px 16px; margin: 16px 0; max-width: 1100px; }
+.oatb-progress progress { width: 100%; max-width: 480px; height: 18px; }
+.oatb-summary { margin: 0 0 16px; }
+.oatb-summary li { margin-bottom: 8px; }
+.oatb-summary strong { display: inline-block; min-width: 2.5em; }
+.oatb-fix { display: block; color: #50575e; margin-left: 2.9em; }
+.oatb-results td { vertical-align: top; }
+.oatb-results .oatb-meta { color: #50575e; }
+.oatb-issues { margin: 0; }
+.oatb-issues code { font-size: 12px; word-break: break-all; }
+.oatb-ok { color: #00a32a; font-weight: 600; }
+.oatb-site { margin: 0; }
+.oatb-site li { padding: 8px 0; border-bottom: 1px solid #f0f0f1; }
+.oatb-badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; color: #fff; background: #50575e; }
+.oatb-pass .oatb-badge { background: #007017; }
+.oatb-warn .oatb-badge { background: #8a5a00; }
+.oatb-fail .oatb-badge { background: #b32d2e; }
+p.oatb-fail { color: #b32d2e; }
