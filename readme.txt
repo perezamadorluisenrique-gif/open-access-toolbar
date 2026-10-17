@@ -1,5 +1,5 @@
 === Open Access Toolbar ===
-Contributors: wporg-username
+Contributors: lenrique5454
 Tags: accessibility, a11y, accessibility toolbar, wcag, font size
 Requires at least: 6.5
 Tested up to: 7.1
