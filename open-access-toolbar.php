@@ -3,7 +3,7 @@
  * Plugin Name:       Open Access Toolbar
  * Plugin URI:        https://github.com/perezamadorluisenrique-gif/open-access-toolbar
  * Description:       A light, private accessibility toolbar for your visitors (text size, spacing, contrast, readable font and more) plus a checker that finds common accessibility problems in your content. No account, no cloud, no tracking.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Enrique
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OATB_VERSION', '1.0.0' );
+define( 'OATB_VERSION', '1.0.1' );
 define( 'OATB_FILE', __FILE__ );
 define( 'OATB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'OATB_URL', plugin_dir_url( __FILE__ ) );

@@ -299,17 +299,19 @@ class OATB_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-		$results = OATB_Scanner::results();
-		$types   = OATB_Checker::types();
-		$counts  = array_fill_keys( array_keys( $types ), 0 );
+		$results  = OATB_Scanner::results();
+		$types    = OATB_Checker::types();
+		$counts   = array_fill_keys( array_keys( $types ), 0 );
+		$unlisted = 0;
 		foreach ( $results['posts'] as $post ) {
 			foreach ( $post['issues'] as $issue ) {
 				if ( isset( $counts[ $issue['type'] ] ) ) {
 					++$counts[ $issue['type'] ];
 				}
 			}
+			$unlisted += (int) ( $post['more'] ?? 0 );
 		}
-		$total_issues = array_sum( $counts );
+		$total_issues = array_sum( $counts ) + $unlisted;
 		?>
 		<div class="wrap oatb-wrap">
 			<h1><?php esc_html_e( 'Accessibility Check', 'open-access-toolbar' ); ?></h1>

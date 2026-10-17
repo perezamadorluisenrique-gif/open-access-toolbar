@@ -4,7 +4,7 @@ Tags: accessibility, a11y, accessibility toolbar, wcag, font size
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,12 @@ Yes, with the `oatb_show_toolbar` filter. For example, return false on a landing
 
 The toolbar runs entirely in the visitor's browser and does not depend on the page's HTML, so cached pages work. It is added at the end of the page and does not touch your builder's layout.
 
+== External services ==
+
+This plugin does not use any third-party or external service and sends no data to anyone.
+
+The one network request it makes is from **Tools > Accessibility Check**, when you click the button that checks your theme. WordPress then requests your own home page (the address in Settings > General) from your own server, to read the page's HTML for the language attribute, viewport tag, skip link and main landmark. The request goes only to your own site, only when you start that check, and nothing from it is stored or sent elsewhere.
+
 == Screenshots ==
 
 1. The toolbar panel on the front end.
@@ -114,10 +120,18 @@ The toolbar runs entirely in the visitor's browser and does not depend on the pa
 
 == Changelog ==
 
+= 1.0.1 =
+* The Accessibility Check total now counts problems beyond the 20 listed per item, so it no longer reads lower than the real number.
+* readme: added the External services section (the theme check requests your own home page).
+* Packaging: removed the bundled translation template; translations are provided through translate.wordpress.org.
+
 = 1.0.0 =
 * First release: visitor toolbar with 12 tools, Accessibility Check for content and theme, skip link and focus outline fixes, accessibility statement draft.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+The problem total in Accessibility Check is now accurate for items with many problems.
 
 = 1.0.0 =
 First release.

@@ -363,9 +363,6 @@ class OATB_Checker {
 	 */
 	private static function short( $text ) {
 		$text = trim( preg_replace( '/\s+/', ' ', (string) $text ) );
-		if ( function_exists( 'mb_strlen' ) && mb_strlen( $text ) > 90 ) {
-			return mb_substr( $text, 0, 87 ) . '...';
-		}
-		return strlen( $text ) > 90 ? substr( $text, 0, 87 ) . '...' : $text;
+		return mb_strlen( $text ) > 90 ? mb_substr( $text, 0, 87 ) . '...' : $text;
 	}
 }
