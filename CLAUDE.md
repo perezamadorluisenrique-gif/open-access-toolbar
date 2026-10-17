@@ -15,7 +15,7 @@ Locally the e2e test needs axe-core: `npm install --no-save --prefix build/node 
 - `includes/class-oatb-admin.php`: Settings > Accessibility Toolbar, Tools > Accessibility Check, statement draft via admin-post.
 
 ## Conventions and traps
-- Prefix `oatb`/`OATB_`. Text domain `open-access-toolbar`; regenerate the .pot when strings change.
+- Prefix `oatb`/`OATB_`. Text domain `open-access-toolbar`. Do not ship translation files or call load_plugin_textdomain (translate.wordpress.org does it); see the wprequirements skill. The skill beats this file where they differ.
 - Never claim the plugin makes a site "compliant" (ADA/EAA/WCAG) in code, readme or UI: the FTC fined an overlay vendor for that. Keep claims factual.
 - Plugin Check caps the readme short description at 150 characters.
 - `php -S` serves one request at a time; `bin/e2e.sh` sets `PHP_CLI_SERVER_WORKERS=4` so the theme check's loopback request works.

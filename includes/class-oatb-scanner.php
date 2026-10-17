@@ -148,14 +148,14 @@ class OATB_Scanner {
 
 		$previous = isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null;
 		// Rendering blocks needs the global post, as on the front end.
-		$GLOBALS['post'] = $post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		$GLOBALS['post'] = $post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- blocks read the global post, as on the front end; restored below.
 		setup_postdata( $post );
 
 		ob_start();
 		$html = do_shortcode( do_blocks( $post->post_content ) );
 		ob_end_clean();
 
-		$GLOBALS['post'] = $previous; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		$GLOBALS['post'] = $previous; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- restores the post saved above.
 		if ( $previous instanceof WP_Post ) {
 			setup_postdata( $previous );
 		}
