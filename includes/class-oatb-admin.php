@@ -195,7 +195,7 @@ class OATB_Admin {
 							<?php
 							wp_dropdown_pages(
 								array(
-									'name'              => $name . '[statement_page]',
+									'name'              => esc_attr( $name ) . '[statement_page]',
 									'id'                => 'oatb-statement',
 									'selected'          => (int) $s['statement_page'],
 									'show_option_none'  => esc_html__( '(none)', 'open-access-toolbar' ),
