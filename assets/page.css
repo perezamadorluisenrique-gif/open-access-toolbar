@@ -114,9 +114,9 @@ html.oatb-highlight-focus body *:not(#oatb-root):focus-visible {
 }
 
 /* Stop animations and transitions. */
-html.oatb-stop-animations *,
-html.oatb-stop-animations *::before,
-html.oatb-stop-animations *::after {
+html.oatb-stop-animations :not(#oatb-root, #oatb-root *),
+html.oatb-stop-animations :not(#oatb-root, #oatb-root *)::before,
+html.oatb-stop-animations :not(#oatb-root, #oatb-root *)::after {
 	animation-duration: 0.001s !important;
 	animation-delay: 0s !important;
 	animation-iteration-count: 1 !important;
@@ -127,6 +127,6 @@ html.oatb-stop-animations *::after {
 
 /* Big cursor (a 48px arrow). */
 html.oatb-big-cursor,
-html.oatb-big-cursor * {
+html.oatb-big-cursor :not(#oatb-root, #oatb-root *) {
 	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l15 11.5-6.6.9 3.9 7.6-2.9 1.5-3.9-7.7L4 20z' fill='%23000' stroke='%23fff' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 8 4, auto !important;
 }

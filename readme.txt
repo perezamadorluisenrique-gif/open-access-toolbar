@@ -35,7 +35,7 @@ Each visitor's choices are remembered in their own browser (localStorage) and ap
 = Built to stay out of the way =
 
 * One small script and one small stylesheet, loaded only on the front end. No jQuery, no CDN, no web fonts.
-* The toolbar is drawn in a shadow root, so your theme's CSS can't break it and it can't break your theme.
+* The toolbar is drawn in a shadow root, which keeps your theme's CSS and the toolbar's styles apart.
 * The toolbar itself works with a keyboard and a screen reader: real buttons, announced states, Escape to close, visible focus.
 * Nothing changes on your pages until a visitor turns a tool on.
 * Nothing is added to the WordPress dashboard except its two screens. No upsells, no notices.
