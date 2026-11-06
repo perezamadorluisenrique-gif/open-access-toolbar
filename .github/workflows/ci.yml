@@ -46,12 +46,12 @@ jobs:
       - run: bin/build.sh
       - uses: wordpress/plugin-check-action@v1
         with:
-          build-dir: build/open-access-toolbar
+          build-dir: build/readwell-bar
           include-experimental: true
 
   e2e:
     name: Browser test on WordPress ${{ matrix.wp }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:

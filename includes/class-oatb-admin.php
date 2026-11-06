@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class OATB_Admin {
 
-	const SETTINGS_PAGE = 'open-access-toolbar';
+	const SETTINGS_PAGE = 'readwell-bar';
 	const CHECK_PAGE    = 'oatb-check';
 	const NONCE         = 'oatb_check';
 
@@ -37,15 +37,15 @@ class OATB_Admin {
 	 */
 	public function menu() {
 		add_options_page(
-			__( 'Accessibility Toolbar', 'open-access-toolbar' ),
-			__( 'Accessibility Toolbar', 'open-access-toolbar' ),
+			__( 'Accessibility Toolbar', 'readwell-bar' ),
+			__( 'Accessibility Toolbar', 'readwell-bar' ),
 			'manage_options',
 			self::SETTINGS_PAGE,
 			array( $this, 'render_settings' )
 		);
 		add_management_page(
-			__( 'Accessibility Check', 'open-access-toolbar' ),
-			__( 'Accessibility Check', 'open-access-toolbar' ),
+			__( 'Accessibility Check', 'readwell-bar' ),
+			__( 'Accessibility Check', 'readwell-bar' ),
 			'manage_options',
 			self::CHECK_PAGE,
 			array( $this, 'render_check' )
@@ -87,10 +87,10 @@ class OATB_Admin {
 					'nonce'   => wp_create_nonce( self::NONCE ),
 					'i18n'    => array(
 						/* translators: 1: posts checked so far, 2: total posts. */
-						'progress' => __( 'Checked %1$d of %2$d', 'open-access-toolbar' ),
-						'done'     => __( 'Check finished. Loading the results...', 'open-access-toolbar' ),
-						'error'    => __( 'The check stopped because of an error. Reload the page and try again.', 'open-access-toolbar' ),
-						'checking' => __( 'Checking your home page...', 'open-access-toolbar' ),
+						'progress' => __( 'Checked %1$d of %2$d', 'readwell-bar' ),
+						'done'     => __( 'Check finished. Loading the results...', 'readwell-bar' ),
+						'error'    => __( 'The check stopped because of an error. Reload the page and try again.', 'readwell-bar' ),
+						'checking' => __( 'Checking your home page...', 'readwell-bar' ),
 					),
 				)
 			);
@@ -107,38 +107,38 @@ class OATB_Admin {
 		$s      = OATB_Settings::get();
 		$name   = OATB_Settings::OPTION;
 		$labels = array(
-			'bottom-right' => __( 'Bottom right', 'open-access-toolbar' ),
-			'bottom-left'  => __( 'Bottom left', 'open-access-toolbar' ),
-			'top-right'    => __( 'Top right', 'open-access-toolbar' ),
-			'top-left'     => __( 'Top left', 'open-access-toolbar' ),
+			'bottom-right' => __( 'Bottom right', 'readwell-bar' ),
+			'bottom-left'  => __( 'Bottom left', 'readwell-bar' ),
+			'top-right'    => __( 'Top right', 'readwell-bar' ),
+			'top-left'     => __( 'Top left', 'readwell-bar' ),
 		);
 		$sizes  = array(
-			'small'  => __( 'Small', 'open-access-toolbar' ),
-			'medium' => __( 'Medium', 'open-access-toolbar' ),
-			'large'  => __( 'Large', 'open-access-toolbar' ),
+			'small'  => __( 'Small', 'readwell-bar' ),
+			'medium' => __( 'Medium', 'readwell-bar' ),
+			'large'  => __( 'Large', 'readwell-bar' ),
 		);
 		?>
 		<div class="wrap oatb-wrap">
-			<h1><?php esc_html_e( 'Accessibility Toolbar', 'open-access-toolbar' ); ?></h1>
+			<h1><?php esc_html_e( 'Accessibility Toolbar', 'readwell-bar' ); ?></h1>
 			<p class="oatb-intro">
-				<?php esc_html_e( 'The toolbar lets each visitor adjust your site to how they read best. Their choices stay in their own browser: no cookies, no account and nothing sent to any server.', 'open-access-toolbar' ); ?>
-				<a href="<?php echo esc_url( admin_url( 'tools.php?page=' . self::CHECK_PAGE ) ); ?>"><?php esc_html_e( 'Check your content for accessibility problems', 'open-access-toolbar' ); ?></a>
+				<?php esc_html_e( 'The toolbar lets each visitor adjust your site to how they read best. Their choices stay in their own browser: no cookies, no account and nothing sent to any server.', 'readwell-bar' ); ?>
+				<a href="<?php echo esc_url( admin_url( 'tools.php?page=' . self::CHECK_PAGE ) ); ?>"><?php esc_html_e( 'Check your content for accessibility problems', 'readwell-bar' ); ?></a>
 			</p>
 			<?php settings_errors(); ?>
 			<form method="post" action="options.php">
 				<?php settings_fields( 'oatb' ); ?>
 				<table class="form-table" role="presentation">
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Toolbar', 'open-access-toolbar' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Toolbar', 'readwell-bar' ); ?></th>
 						<td>
-							<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[enabled]" value="1" <?php checked( $s['enabled'] ); ?>> <?php esc_html_e( 'Show the accessibility toolbar to visitors', 'open-access-toolbar' ); ?></label>
+							<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[enabled]" value="1" <?php checked( $s['enabled'] ); ?>> <?php esc_html_e( 'Show the accessibility toolbar to visitors', 'readwell-bar' ); ?></label>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Tools', 'open-access-toolbar' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Tools', 'readwell-bar' ); ?></th>
 						<td>
 							<fieldset class="oatb-tools">
-								<legend class="screen-reader-text"><?php esc_html_e( 'Tools', 'open-access-toolbar' ); ?></legend>
+								<legend class="screen-reader-text"><?php esc_html_e( 'Tools', 'readwell-bar' ); ?></legend>
 								<?php foreach ( OATB_Settings::tools() as $key => $label ) : ?>
 									<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[tools][]" value="<?php echo esc_attr( $key ); ?>" <?php checked( in_array( $key, $s['tools'], true ) ); ?>> <?php echo esc_html( $label ); ?></label>
 								<?php endforeach; ?>
@@ -146,7 +146,7 @@ class OATB_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="oatb-position"><?php esc_html_e( 'Button position', 'open-access-toolbar' ); ?></label></th>
+						<th scope="row"><label for="oatb-position"><?php esc_html_e( 'Button position', 'readwell-bar' ); ?></label></th>
 						<td>
 							<select id="oatb-position" name="<?php echo esc_attr( $name ); ?>[position]">
 								<?php foreach ( $labels as $value => $label ) : ?>
@@ -156,7 +156,7 @@ class OATB_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="oatb-size"><?php esc_html_e( 'Button size', 'open-access-toolbar' ); ?></label></th>
+						<th scope="row"><label for="oatb-size"><?php esc_html_e( 'Button size', 'readwell-bar' ); ?></label></th>
 						<td>
 							<select id="oatb-size" name="<?php echo esc_attr( $name ); ?>[size]">
 								<?php foreach ( $sizes as $value => $label ) : ?>
@@ -166,31 +166,31 @@ class OATB_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="oatb-color"><?php esc_html_e( 'Button color', 'open-access-toolbar' ); ?></label></th>
+						<th scope="row"><label for="oatb-color"><?php esc_html_e( 'Button color', 'readwell-bar' ); ?></label></th>
 						<td>
 							<input type="color" id="oatb-color" name="<?php echo esc_attr( $name ); ?>[color]" value="<?php echo esc_attr( $s['color'] ); ?>">
-							<p class="description"><?php esc_html_e( 'The icon is drawn in black or white, whichever has more contrast with this color.', 'open-access-toolbar' ); ?></p>
+							<p class="description"><?php esc_html_e( 'The icon is drawn in black or white, whichever has more contrast with this color.', 'readwell-bar' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Phones', 'open-access-toolbar' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Phones', 'readwell-bar' ); ?></th>
 						<td>
-							<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[hide_on_mobile]" value="1" <?php checked( $s['hide_on_mobile'] ); ?>> <?php esc_html_e( 'Hide the toolbar on small screens', 'open-access-toolbar' ); ?></label>
+							<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[hide_on_mobile]" value="1" <?php checked( $s['hide_on_mobile'] ); ?>> <?php esc_html_e( 'Hide the toolbar on small screens', 'readwell-bar' ); ?></label>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Theme fixes', 'open-access-toolbar' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Theme fixes', 'readwell-bar' ); ?></th>
 						<td>
 							<fieldset>
-								<legend class="screen-reader-text"><?php esc_html_e( 'Theme fixes', 'open-access-toolbar' ); ?></legend>
-								<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[skip_link]" value="1" <?php checked( $s['skip_link'] ); ?>> <?php esc_html_e( 'Add a "Skip to content" link for keyboard users if the theme has none', 'open-access-toolbar' ); ?></label><br>
-								<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[focus_outline]" value="1" <?php checked( $s['focus_outline'] ); ?>> <?php esc_html_e( 'Always show a visible outline on the focused link or button', 'open-access-toolbar' ); ?></label>
-								<p class="description"><?php esc_html_e( 'These apply to every visitor, whether or not the toolbar is shown.', 'open-access-toolbar' ); ?></p>
+								<legend class="screen-reader-text"><?php esc_html_e( 'Theme fixes', 'readwell-bar' ); ?></legend>
+								<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[skip_link]" value="1" <?php checked( $s['skip_link'] ); ?>> <?php esc_html_e( 'Add a "Skip to content" link for keyboard users if the theme has none', 'readwell-bar' ); ?></label><br>
+								<label><input type="checkbox" name="<?php echo esc_attr( $name ); ?>[focus_outline]" value="1" <?php checked( $s['focus_outline'] ); ?>> <?php esc_html_e( 'Always show a visible outline on the focused link or button', 'readwell-bar' ); ?></label>
+								<p class="description"><?php esc_html_e( 'These apply to every visitor, whether or not the toolbar is shown.', 'readwell-bar' ); ?></p>
 							</fieldset>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="oatb-statement"><?php esc_html_e( 'Accessibility statement', 'open-access-toolbar' ); ?></label></th>
+						<th scope="row"><label for="oatb-statement"><?php esc_html_e( 'Accessibility statement', 'readwell-bar' ); ?></label></th>
 						<td>
 							<?php
 							wp_dropdown_pages(
@@ -198,25 +198,25 @@ class OATB_Admin {
 									'name'              => esc_attr( $name ) . '[statement_page]',
 									'id'                => 'oatb-statement',
 									'selected'          => (int) $s['statement_page'],
-									'show_option_none'  => esc_html__( '(none)', 'open-access-toolbar' ),
+									'show_option_none'  => esc_html__( '(none)', 'readwell-bar' ),
 									'option_none_value' => '0',
 									'post_status'       => array( 'publish', 'draft' ),
 								)
 							);
 							?>
-							<p class="description"><?php esc_html_e( 'A published page chosen here is linked from the toolbar.', 'open-access-toolbar' ); ?></p>
+							<p class="description"><?php esc_html_e( 'A published page chosen here is linked from the toolbar.', 'readwell-bar' ); ?></p>
 						</td>
 					</tr>
 				</table>
 				<?php submit_button(); ?>
 			</form>
 
-			<h2><?php esc_html_e( 'Need an accessibility statement?', 'open-access-toolbar' ); ?></h2>
-			<p><?php esc_html_e( 'Create a draft page with a statement outline: your commitment, what you have done, known limitations and how visitors can report a problem. Fill in the details, then publish it.', 'open-access-toolbar' ); ?></p>
+			<h2><?php esc_html_e( 'Need an accessibility statement?', 'readwell-bar' ); ?></h2>
+			<p><?php esc_html_e( 'Create a draft page with a statement outline: your commitment, what you have done, known limitations and how visitors can report a problem. Fill in the details, then publish it.', 'readwell-bar' ); ?></p>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="oatb_statement">
 				<?php wp_nonce_field( 'oatb_statement' ); ?>
-				<?php submit_button( __( 'Create draft statement page', 'open-access-toolbar' ), 'secondary', 'submit', false ); ?>
+				<?php submit_button( __( 'Create draft statement page', 'readwell-bar' ), 'secondary', 'submit', false ); ?>
 			</form>
 		</div>
 		<?php
@@ -227,7 +227,7 @@ class OATB_Admin {
 	 */
 	public function create_statement() {
 		if ( ! current_user_can( 'manage_options' ) || ! current_user_can( 'publish_pages' ) ) {
-			wp_die( esc_html__( 'Sorry, you are not allowed to do that.', 'open-access-toolbar' ), 403 );
+			wp_die( esc_html__( 'Sorry, you are not allowed to do that.', 'readwell-bar' ), 403 );
 		}
 		check_admin_referer( 'oatb_statement' );
 
@@ -235,7 +235,7 @@ class OATB_Admin {
 			array(
 				'post_type'    => 'page',
 				'post_status'  => 'draft',
-				'post_title'   => __( 'Accessibility statement', 'open-access-toolbar' ),
+				'post_title'   => __( 'Accessibility statement', 'readwell-bar' ),
 				'post_content' => self::statement_content(),
 			),
 			true
@@ -261,26 +261,26 @@ class OATB_Admin {
 		$site     = get_bloginfo( 'name' );
 		$sections = array(
 			array(
-				'h' => __( 'Our commitment', 'open-access-toolbar' ),
+				'h' => __( 'Our commitment', 'readwell-bar' ),
 				/* translators: %s: site name. */
-				'p' => sprintf( __( '%s wants everyone to be able to use this website, including people who use screen readers, keyboard navigation, magnification or other assistive technology. We aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA.', 'open-access-toolbar' ), $site ),
+				'p' => sprintf( __( '%s wants everyone to be able to use this website, including people who use screen readers, keyboard navigation, magnification or other assistive technology. We aim to follow the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA.', 'readwell-bar' ), $site ),
 			),
 			array(
-				'h' => __( 'What we have done', 'open-access-toolbar' ),
-				'p' => __( '[Describe the steps you have taken, for example: images have text alternatives, headings are used in order, forms have labels, and visitors can adjust text size, spacing and contrast with the accessibility toolbar.]', 'open-access-toolbar' ),
+				'h' => __( 'What we have done', 'readwell-bar' ),
+				'p' => __( '[Describe the steps you have taken, for example: images have text alternatives, headings are used in order, forms have labels, and visitors can adjust text size, spacing and contrast with the accessibility toolbar.]', 'readwell-bar' ),
 			),
 			array(
-				'h' => __( 'Known limitations', 'open-access-toolbar' ),
-				'p' => __( '[List any parts of the site that are not yet fully accessible, such as older PDF documents or third-party embeds, and when you plan to fix them.]', 'open-access-toolbar' ),
+				'h' => __( 'Known limitations', 'readwell-bar' ),
+				'p' => __( '[List any parts of the site that are not yet fully accessible, such as older PDF documents or third-party embeds, and when you plan to fix them.]', 'readwell-bar' ),
 			),
 			array(
-				'h' => __( 'Feedback and contact', 'open-access-toolbar' ),
-				'p' => __( 'If you have trouble using any part of this website, please tell us and we will help and work on a fix. [Add an email address, phone number or contact page link.]', 'open-access-toolbar' ),
+				'h' => __( 'Feedback and contact', 'readwell-bar' ),
+				'p' => __( 'If you have trouble using any part of this website, please tell us and we will help and work on a fix. [Add an email address, phone number or contact page link.]', 'readwell-bar' ),
 			),
 			array(
-				'h' => __( 'Date of this statement', 'open-access-toolbar' ),
+				'h' => __( 'Date of this statement', 'readwell-bar' ),
 				/* translators: %s: date. */
-				'p' => sprintf( __( 'This statement was last reviewed on %s.', 'open-access-toolbar' ), wp_date( get_option( 'date_format' ) ) ),
+				'p' => sprintf( __( 'This statement was last reviewed on %s.', 'readwell-bar' ), wp_date( get_option( 'date_format' ) ) ),
 			),
 		);
 
@@ -314,29 +314,29 @@ class OATB_Admin {
 		$total_issues = array_sum( $counts ) + $unlisted;
 		?>
 		<div class="wrap oatb-wrap">
-			<h1><?php esc_html_e( 'Accessibility Check', 'open-access-toolbar' ); ?></h1>
-			<p class="oatb-intro"><?php esc_html_e( 'Finds common problems in your published content that make it harder to use with a screen reader or keyboard. Automated checks catch only part of what matters, so also test your site with a keyboard and a screen reader.', 'open-access-toolbar' ); ?></p>
+			<h1><?php esc_html_e( 'Accessibility Check', 'readwell-bar' ); ?></h1>
+			<p class="oatb-intro"><?php esc_html_e( 'Finds common problems in your published content that make it harder to use with a screen reader or keyboard. Automated checks catch only part of what matters, so also test your site with a keyboard and a screen reader.', 'readwell-bar' ); ?></p>
 
 			<div class="oatb-card">
-				<h2><?php esc_html_e( 'Content', 'open-access-toolbar' ); ?></h2>
+				<h2><?php esc_html_e( 'Content', 'readwell-bar' ); ?></h2>
 				<?php if ( $results['finished'] ) : ?>
 					<p>
 						<?php
 						printf(
 							/* translators: 1: number of posts, 2: date and time. */
-							esc_html__( 'Last check: %1$s posts and pages on %2$s.', 'open-access-toolbar' ),
+							esc_html__( 'Last check: %1$s posts and pages on %2$s.', 'readwell-bar' ),
 							esc_html( number_format_i18n( $results['total'] ) ),
 							esc_html( wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $results['finished'] ) )
 						);
 						?>
 					</p>
 				<?php elseif ( $results['started'] ) : ?>
-					<p><?php esc_html_e( 'The last check did not finish. Run it again to see complete results.', 'open-access-toolbar' ); ?></p>
+					<p><?php esc_html_e( 'The last check did not finish. Run it again to see complete results.', 'readwell-bar' ); ?></p>
 				<?php else : ?>
-					<p><?php esc_html_e( 'Your content has not been checked yet.', 'open-access-toolbar' ); ?></p>
+					<p><?php esc_html_e( 'Your content has not been checked yet.', 'readwell-bar' ); ?></p>
 				<?php endif; ?>
 				<p>
-					<button type="button" class="button button-primary" id="oatb-start"><?php echo $results['started'] ? esc_html__( 'Check again', 'open-access-toolbar' ) : esc_html__( 'Check my content', 'open-access-toolbar' ); ?></button>
+					<button type="button" class="button button-primary" id="oatb-start"><?php echo $results['started'] ? esc_html__( 'Check again', 'readwell-bar' ) : esc_html__( 'Check my content', 'readwell-bar' ); ?></button>
 				</p>
 				<div id="oatb-progress" class="oatb-progress" hidden>
 					<progress max="100" value="0"></progress>
@@ -347,18 +347,18 @@ class OATB_Admin {
 			<?php if ( $results['finished'] ) : ?>
 				<div class="oatb-card">
 					<?php if ( 0 === $total_issues ) : ?>
-						<p class="oatb-ok"><?php esc_html_e( 'No problems found in your content by the automated checks.', 'open-access-toolbar' ); ?></p>
+						<p class="oatb-ok"><?php esc_html_e( 'No problems found in your content by the automated checks.', 'readwell-bar' ); ?></p>
 					<?php else : ?>
 						<h2>
 							<?php
 							echo esc_html(
 								sprintf(
 									/* translators: 1: "N problems" text, 2: "N items" text. */
-									__( '%1$s found in %2$s', 'open-access-toolbar' ),
+									__( '%1$s found in %2$s', 'readwell-bar' ),
 									/* translators: %s: number of problems. */
-									sprintf( _n( '%s problem', '%s problems', $total_issues, 'open-access-toolbar' ), number_format_i18n( $total_issues ) ),
+									sprintf( _n( '%s problem', '%s problems', $total_issues, 'readwell-bar' ), number_format_i18n( $total_issues ) ),
 									/* translators: %s: number of posts or pages. */
-									sprintf( _n( '%s item', '%s items', count( $results['posts'] ), 'open-access-toolbar' ), number_format_i18n( count( $results['posts'] ) ) )
+									sprintf( _n( '%s item', '%s items', count( $results['posts'] ), 'readwell-bar' ), number_format_i18n( count( $results['posts'] ) ) )
 								)
 							);
 							?>
@@ -381,28 +381,28 @@ class OATB_Admin {
 							<p class="description">
 								<?php
 								/* translators: 1: number of items listed, 2: number of further items with problems. */
-								echo esc_html( sprintf( __( 'The first %1$s items with problems are listed below. %2$s more have problems too; fix these first and check again to see them.', 'open-access-toolbar' ), number_format_i18n( OATB_Scanner::MAX_POSTS ), number_format_i18n( $results['omitted'] ) ) );
+								echo esc_html( sprintf( __( 'The first %1$s items with problems are listed below. %2$s more have problems too; fix these first and check again to see them.', 'readwell-bar' ), number_format_i18n( OATB_Scanner::MAX_POSTS ), number_format_i18n( $results['omitted'] ) ) );
 								?>
 							</p>
 						<?php endif; ?>
 						<table class="widefat striped oatb-results">
 							<thead>
 								<tr>
-									<th scope="col"><?php esc_html_e( 'Item', 'open-access-toolbar' ); ?></th>
-									<th scope="col"><?php esc_html_e( 'Problems', 'open-access-toolbar' ); ?></th>
+									<th scope="col"><?php esc_html_e( 'Item', 'readwell-bar' ); ?></th>
+									<th scope="col"><?php esc_html_e( 'Problems', 'readwell-bar' ); ?></th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php foreach ( $results['posts'] as $post_id => $post ) : ?>
 									<tr>
 										<td>
-											<strong><?php echo esc_html( '' !== $post['title'] ? $post['title'] : __( '(no title)', 'open-access-toolbar' ) ); ?></strong>
+											<strong><?php echo esc_html( '' !== $post['title'] ? $post['title'] : __( '(no title)', 'readwell-bar' ) ); ?></strong>
 											<div class="oatb-meta"><?php echo esc_html( self::type_label( $post['type'] ) ); ?></div>
 											<div class="row-actions visible">
 												<?php if ( current_user_can( 'edit_post', $post_id ) ) : ?>
-													<a href="<?php echo esc_url( (string) get_edit_post_link( $post_id ) ); ?>"><?php esc_html_e( 'Edit', 'open-access-toolbar' ); ?></a> |
+													<a href="<?php echo esc_url( (string) get_edit_post_link( $post_id ) ); ?>"><?php esc_html_e( 'Edit', 'readwell-bar' ); ?></a> |
 												<?php endif; ?>
-												<a href="<?php echo esc_url( (string) get_permalink( $post_id ) ); ?>"><?php esc_html_e( 'View', 'open-access-toolbar' ); ?></a>
+												<a href="<?php echo esc_url( (string) get_permalink( $post_id ) ); ?>"><?php esc_html_e( 'View', 'readwell-bar' ); ?></a>
 											</div>
 										</td>
 										<td>
@@ -419,7 +419,7 @@ class OATB_Admin {
 													<li>
 														<?php
 														/* translators: %s: number of further problems. */
-														echo esc_html( sprintf( __( 'and %s more', 'open-access-toolbar' ), number_format_i18n( $post['more'] ) ) );
+														echo esc_html( sprintf( __( 'and %s more', 'readwell-bar' ), number_format_i18n( $post['more'] ) ) );
 														?>
 													</li>
 												<?php endif; ?>
@@ -434,9 +434,9 @@ class OATB_Admin {
 			<?php endif; ?>
 
 			<div class="oatb-card">
-				<h2><?php esc_html_e( 'Theme', 'open-access-toolbar' ); ?></h2>
-				<p><?php esc_html_e( 'Checks your home page for things your theme controls.', 'open-access-toolbar' ); ?></p>
-				<p><button type="button" class="button" id="oatb-site-check"><?php esc_html_e( 'Check my theme', 'open-access-toolbar' ); ?></button></p>
+				<h2><?php esc_html_e( 'Theme', 'readwell-bar' ); ?></h2>
+				<p><?php esc_html_e( 'Checks your home page for things your theme controls.', 'readwell-bar' ); ?></p>
+				<p><button type="button" class="button" id="oatb-site-check"><?php esc_html_e( 'Check my theme', 'readwell-bar' ); ?></button></p>
 				<div id="oatb-site-results" aria-live="polite"></div>
 			</div>
 		</div>
@@ -460,7 +460,7 @@ class OATB_Admin {
 	private function guard() {
 		check_ajax_referer( self::NONCE, 'nonce' );
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Sorry, you are not allowed to do that.', 'open-access-toolbar' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'Sorry, you are not allowed to do that.', 'readwell-bar' ) ), 403 );
 		}
 	}
 
@@ -491,22 +491,22 @@ class OATB_Admin {
 			wp_send_json_error(
 				array(
 					/* translators: %s: error message. */
-					'html' => '<p class="oatb-fail">' . esc_html( sprintf( __( 'Could not load your home page: %s', 'open-access-toolbar' ), $checks->get_error_message() ) ) . '</p>',
+					'html' => '<p class="oatb-fail">' . esc_html( sprintf( __( 'Could not load your home page: %s', 'readwell-bar' ), $checks->get_error_message() ) ) . '</p>',
 				)
 			);
 		}
 
 		$settings = OATB_Settings::get();
 		$status   = array(
-			'pass' => __( 'Pass', 'open-access-toolbar' ),
-			'warn' => __( 'Check', 'open-access-toolbar' ),
-			'fail' => __( 'Problem', 'open-access-toolbar' ),
+			'pass' => __( 'Pass', 'readwell-bar' ),
+			'warn' => __( 'Check', 'readwell-bar' ),
+			'fail' => __( 'Problem', 'readwell-bar' ),
 		);
 		$html     = '<ul class="oatb-site">';
 		foreach ( $checks as $check ) {
 			if ( 'skip' === $check['id'] && 'pass' !== $check['status'] && $settings['skip_link'] ) {
 				$check['status'] = 'pass';
-				$check['detail'] = __( 'This plugin adds a skip link for visitors (the setting is on).', 'open-access-toolbar' );
+				$check['detail'] = __( 'This plugin adds a skip link for visitors (the setting is on).', 'readwell-bar' );
 			}
 			$html .= sprintf(
 				'<li class="oatb-%1$s"><span class="oatb-badge">%2$s</span> <strong>%3$s</strong><br>%4$s</li>',

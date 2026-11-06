@@ -39,18 +39,18 @@ class OATB_Settings {
 	 */
 	public static function tools() {
 		return array(
-			'text_size'       => __( 'Text size', 'open-access-toolbar' ),
-			'line_height'     => __( 'Line height', 'open-access-toolbar' ),
-			'letter_spacing'  => __( 'Letter spacing', 'open-access-toolbar' ),
-			'readable_font'   => __( 'Readable font', 'open-access-toolbar' ),
-			'contrast_dark'   => __( 'High contrast (dark)', 'open-access-toolbar' ),
-			'contrast_light'  => __( 'High contrast (light)', 'open-access-toolbar' ),
-			'grayscale'       => __( 'Grayscale', 'open-access-toolbar' ),
-			'underline_links' => __( 'Underline links', 'open-access-toolbar' ),
-			'highlight_focus' => __( 'Highlight focus', 'open-access-toolbar' ),
-			'stop_animations' => __( 'Stop animations', 'open-access-toolbar' ),
-			'big_cursor'      => __( 'Big cursor', 'open-access-toolbar' ),
-			'reading_guide'   => __( 'Reading guide', 'open-access-toolbar' ),
+			'text_size'       => __( 'Text size', 'readwell-bar' ),
+			'line_height'     => __( 'Line height', 'readwell-bar' ),
+			'letter_spacing'  => __( 'Letter spacing', 'readwell-bar' ),
+			'readable_font'   => __( 'Readable font', 'readwell-bar' ),
+			'contrast_dark'   => __( 'High contrast (dark)', 'readwell-bar' ),
+			'contrast_light'  => __( 'High contrast (light)', 'readwell-bar' ),
+			'grayscale'       => __( 'Grayscale', 'readwell-bar' ),
+			'underline_links' => __( 'Underline links', 'readwell-bar' ),
+			'highlight_focus' => __( 'Highlight focus', 'readwell-bar' ),
+			'stop_animations' => __( 'Stop animations', 'readwell-bar' ),
+			'big_cursor'      => __( 'Big cursor', 'readwell-bar' ),
+			'reading_guide'   => __( 'Reading guide', 'readwell-bar' ),
 		);
 	}
 

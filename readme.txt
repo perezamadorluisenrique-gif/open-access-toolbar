@@ -1,4 +1,4 @@
-=== Open Access Toolbar ===
+=== Readwell Bar ===
 Contributors: lenrique5454
 Tags: accessibility, a11y, accessibility toolbar, wcag, font size
 Requires at least: 6.5
@@ -12,7 +12,7 @@ Private accessibility toolbar for visitors, plus a checker for common accessibil
 
 == Description ==
 
-Open Access Toolbar adds a small button to your site. Visitors open it to make your pages easier for them to read: bigger text, more spacing, higher contrast, a plainer font and more. It also gives you, the site owner, a checker that lists the problems in your own content that make the site harder to use, with what to fix.
+Readwell Bar adds a small button to your site. Visitors open it to make your pages easier for them to read: bigger text, more spacing, higher contrast, a plainer font and more. It also gives you, the site owner, a checker that lists the problems in your own content that make the site harder to use, with what to fix.
 
 No account to create, no external service, no tracking. Everything runs on your own site.
 
@@ -35,7 +35,7 @@ Each visitor's choices are remembered in their own browser (localStorage) and ap
 = Built to stay out of the way =
 
 * One small script and one small stylesheet, loaded only on the front end. No jQuery, no CDN, no web fonts.
-* The toolbar is drawn in a shadow root, so your theme's CSS can't break it and it can't break your theme.
+* The toolbar is drawn in a shadow root, which keeps your theme's CSS and the toolbar's styles apart.
 * The toolbar itself works with a keyboard and a screen reader: real buttons, announced states, Escape to close, visible focus.
 * Nothing changes on your pages until a visitor turns a tool on.
 * Nothing is added to the WordPress dashboard except its two screens. No upsells, no notices.
@@ -67,11 +67,11 @@ Create a draft accessibility statement page with one click: an outline with your
 
 = What this plugin does not do =
 
-A toolbar does not make a website accessible by itself, and no plugin can make a site "compliant" with a law on its own. Real accessibility comes from the content and the theme: alt text, headings, labels, contrast and keyboard support. Open Access Toolbar gives visitors useful reading adjustments and helps you find and fix the problems in your content. It does not claim more than that.
+A toolbar does not make a website accessible by itself, and no plugin can make a site "compliant" with a law on its own. Real accessibility comes from the content and the theme: alt text, headings, labels, contrast and keyboard support. Readwell Bar gives visitors useful reading adjustments and helps you find and fix the problems in your content. It does not claim more than that.
 
 == Installation ==
 
-1. Install and activate Open Access Toolbar from **Plugins > Add New**.
+1. Install and activate Readwell Bar from **Plugins > Add New**.
 2. The toolbar button appears on your site straight away, at the bottom right.
 3. Go to **Settings > Accessibility Toolbar** to choose the tools, position, size and color.
 4. Go to **Tools > Accessibility Check** and click **Check my content**.
