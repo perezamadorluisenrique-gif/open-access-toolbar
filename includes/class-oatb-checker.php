@@ -33,32 +33,32 @@ class OATB_Checker {
 	public static function types() {
 		return array(
 			'img_alt'       => array(
-				'label' => __( 'Image without alt text', 'open-access-toolbar' ),
-				'fix'   => __( 'Describe the image in its "Alternative text" field. Use empty alt text only for purely decorative images.', 'open-access-toolbar' ),
+				'label' => __( 'Image without alt text', 'readwell-bar' ),
+				'fix'   => __( 'Describe the image in its "Alternative text" field. Use empty alt text only for purely decorative images.', 'readwell-bar' ),
 			),
 			'empty_link'    => array(
-				'label' => __( 'Link with no text', 'open-access-toolbar' ),
-				'fix'   => __( 'Give the link visible text, or alt text on the image inside it, that says where it goes.', 'open-access-toolbar' ),
+				'label' => __( 'Link with no text', 'readwell-bar' ),
+				'fix'   => __( 'Give the link visible text, or alt text on the image inside it, that says where it goes.', 'readwell-bar' ),
 			),
 			'empty_button'  => array(
-				'label' => __( 'Button with no text', 'open-access-toolbar' ),
-				'fix'   => __( 'Give the button visible text or an accessible name (aria-label).', 'open-access-toolbar' ),
+				'label' => __( 'Button with no text', 'readwell-bar' ),
+				'fix'   => __( 'Give the button visible text or an accessible name (aria-label).', 'readwell-bar' ),
 			),
 			'empty_heading' => array(
-				'label' => __( 'Empty heading', 'open-access-toolbar' ),
-				'fix'   => __( 'Remove the empty heading block or give it text.', 'open-access-toolbar' ),
+				'label' => __( 'Empty heading', 'readwell-bar' ),
+				'fix'   => __( 'Remove the empty heading block or give it text.', 'readwell-bar' ),
 			),
 			'heading_skip'  => array(
-				'label' => __( 'Skipped heading level', 'open-access-toolbar' ),
-				'fix'   => __( 'Use heading levels in order (H2, then H3 inside it) so screen reader users can follow the structure.', 'open-access-toolbar' ),
+				'label' => __( 'Skipped heading level', 'readwell-bar' ),
+				'fix'   => __( 'Use heading levels in order (H2, then H3 inside it) so screen reader users can follow the structure.', 'readwell-bar' ),
 			),
 			'form_label'    => array(
-				'label' => __( 'Form field without a label', 'open-access-toolbar' ),
-				'fix'   => __( 'Add a label to the field. Placeholder text alone is not a label.', 'open-access-toolbar' ),
+				'label' => __( 'Form field without a label', 'readwell-bar' ),
+				'fix'   => __( 'Add a label to the field. Placeholder text alone is not a label.', 'readwell-bar' ),
 			),
 			'iframe_title'  => array(
-				'label' => __( 'Embedded frame without a title', 'open-access-toolbar' ),
-				'fix'   => __( 'Add a title attribute that says what the embed is, for example "Video: product tour".', 'open-access-toolbar' ),
+				'label' => __( 'Embedded frame without a title', 'readwell-bar' ),
+				'fix'   => __( 'Add a title attribute that says what the embed is, for example "Video: product tour".', 'readwell-bar' ),
 			),
 		);
 	}
@@ -172,7 +172,7 @@ class OATB_Checker {
 						$issues[] = array(
 							'type'    => 'heading_skip',
 							/* translators: 1: previous heading level, 2: this heading level. */
-							'context' => sprintf( __( 'H%1$d followed by H%2$d', 'open-access-toolbar' ), $last_level, $level ),
+							'context' => sprintf( __( 'H%1$d followed by H%2$d', 'readwell-bar' ), $last_level, $level ),
 						);
 					}
 					$last_level = $level;

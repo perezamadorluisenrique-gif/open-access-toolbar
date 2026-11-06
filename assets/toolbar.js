@@ -1,5 +1,5 @@
 /**
- * Open Access Toolbar: the visitor toolbar.
+ * Readwell Bar: the visitor toolbar.
  *
  * Builds the button and panel inside a shadow root so theme CSS can't reach them,
  * applies the visitor's choices to the page, and remembers them in localStorage

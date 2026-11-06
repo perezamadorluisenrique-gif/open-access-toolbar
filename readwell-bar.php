@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Open Access Toolbar
+ * Plugin Name:       Readwell Bar
  * Plugin URI:        https://github.com/perezamadorluisenrique-gif/open-access-toolbar
  * Description:       A light, private accessibility toolbar for your visitors (text size, spacing, contrast, readable font and more) plus a checker that finds common accessibility problems in your content. No account, no cloud, no tracking.
  * Version:           1.0.1
@@ -9,7 +9,7 @@
  * Author:            Enrique
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       open-access-toolbar
+ * Text Domain:       readwell-bar
  *
  * @package OpenAccessToolbar
  */
@@ -48,7 +48,7 @@ add_filter(
 			sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( admin_url( 'options-general.php?page=' . OATB_Admin::SETTINGS_PAGE ) ),
-				esc_html__( 'Settings', 'open-access-toolbar' )
+				esc_html__( 'Settings', 'readwell-bar' )
 			)
 		);
 		return $links;

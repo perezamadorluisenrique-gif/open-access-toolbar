@@ -182,7 +182,7 @@ class OATB_Scanner {
 		$code = (int) wp_remote_retrieve_response_code( $response );
 		if ( $code < 200 || $code >= 300 ) {
 			/* translators: %d: HTTP status code. */
-			return new WP_Error( 'oatb_http', sprintf( __( 'Your home page answered with HTTP status %d.', 'open-access-toolbar' ), $code ) );
+			return new WP_Error( 'oatb_http', sprintf( __( 'Your home page answered with HTTP status %d.', 'readwell-bar' ), $code ) );
 		}
 		return self::analyze_page( wp_remote_retrieve_body( $response ) );
 	}
@@ -228,27 +228,27 @@ class OATB_Scanner {
 			array(
 				'id'     => 'lang',
 				'status' => $lang ? 'pass' : 'fail',
-				'label'  => __( 'Page language is set', 'open-access-toolbar' ),
+				'label'  => __( 'Page language is set', 'readwell-bar' ),
 				/* translators: %s: language code such as en-US. */
-				'detail' => $lang ? sprintf( __( 'The page declares lang="%s".', 'open-access-toolbar' ), $lang ) : __( 'The <html> tag has no lang attribute, so screen readers may read the page in the wrong language. Your theme should print language_attributes().', 'open-access-toolbar' ),
+				'detail' => $lang ? sprintf( __( 'The page declares lang="%s".', 'readwell-bar' ), $lang ) : __( 'The <html> tag has no lang attribute, so screen readers may read the page in the wrong language. Your theme should print language_attributes().', 'readwell-bar' ),
 			),
 			array(
 				'id'     => 'zoom',
 				'status' => $zoom ? 'pass' : 'fail',
-				'label'  => __( 'Visitors can zoom', 'open-access-toolbar' ),
-				'detail' => $zoom ? __( 'The viewport does not block pinch zoom.', 'open-access-toolbar' ) : __( 'The viewport meta tag blocks zooming (user-scalable=no or a low maximum-scale). Ask your theme author to remove it.', 'open-access-toolbar' ),
+				'label'  => __( 'Visitors can zoom', 'readwell-bar' ),
+				'detail' => $zoom ? __( 'The viewport does not block pinch zoom.', 'readwell-bar' ) : __( 'The viewport meta tag blocks zooming (user-scalable=no or a low maximum-scale). Ask your theme author to remove it.', 'readwell-bar' ),
 			),
 			array(
 				'id'     => 'skip',
 				'status' => $skip ? 'pass' : 'warn',
-				'label'  => __( 'Skip link', 'open-access-toolbar' ),
-				'detail' => $skip ? __( 'One of the first links jumps to a section of the page.', 'open-access-toolbar' ) : __( 'No "skip to content" link found near the top of the page. You can turn on the skip link in the toolbar settings.', 'open-access-toolbar' ),
+				'label'  => __( 'Skip link', 'readwell-bar' ),
+				'detail' => $skip ? __( 'One of the first links jumps to a section of the page.', 'readwell-bar' ) : __( 'No "skip to content" link found near the top of the page. You can turn on the skip link in the toolbar settings.', 'readwell-bar' ),
 			),
 			array(
 				'id'     => 'main',
 				'status' => $main ? 'pass' : 'warn',
-				'label'  => __( 'Main content landmark', 'open-access-toolbar' ),
-				'detail' => $main ? __( 'The page marks its main content with <main>.', 'open-access-toolbar' ) : __( 'No <main> element found, so screen reader users cannot jump straight to the content.', 'open-access-toolbar' ),
+				'label'  => __( 'Main content landmark', 'readwell-bar' ),
+				'detail' => $main ? __( 'The page marks its main content with <main>.', 'readwell-bar' ) : __( 'No <main> element found, so screen reader users cannot jump straight to the content.', 'readwell-bar' ),
 			),
 		);
 	}

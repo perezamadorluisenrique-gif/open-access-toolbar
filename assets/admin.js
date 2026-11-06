@@ -1,5 +1,5 @@
 /**
- * Open Access Toolbar: runs the content check in batches and the theme check.
+ * Readwell Bar: runs the content check in batches and the theme check.
  */
 ( function () {
 	'use strict';

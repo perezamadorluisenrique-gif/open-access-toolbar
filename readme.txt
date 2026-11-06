@@ -1,4 +1,4 @@
-=== Open Access Toolbar ===
+=== Readwell Bar ===
 Contributors: lenrique5454
 Tags: accessibility, a11y, accessibility toolbar, wcag, font size
 Requires at least: 6.5
@@ -12,7 +12,7 @@ Private accessibility toolbar for visitors, plus a checker for common accessibil
 
 == Description ==
 
-Open Access Toolbar adds a small button to your site. Visitors open it to make your pages easier for them to read: bigger text, more spacing, higher contrast, a plainer font and more. It also gives you, the site owner, a checker that lists the problems in your own content that make the site harder to use, with what to fix.
+Readwell Bar adds a small button to your site. Visitors open it to make your pages easier for them to read: bigger text, more spacing, higher contrast, a plainer font and more. It also gives you, the site owner, a checker that lists the problems in your own content that make the site harder to use, with what to fix.
 
 No account to create, no external service, no tracking. Everything runs on your own site.
 
@@ -67,11 +67,11 @@ Create a draft accessibility statement page with one click: an outline with your
 
 = What this plugin does not do =
 
-A toolbar does not make a website accessible by itself, and no plugin can make a site "compliant" with a law on its own. Real accessibility comes from the content and the theme: alt text, headings, labels, contrast and keyboard support. Open Access Toolbar gives visitors useful reading adjustments and helps you find and fix the problems in your content. It does not claim more than that.
+A toolbar does not make a website accessible by itself, and no plugin can make a site "compliant" with a law on its own. Real accessibility comes from the content and the theme: alt text, headings, labels, contrast and keyboard support. Readwell Bar gives visitors useful reading adjustments and helps you find and fix the problems in your content. It does not claim more than that.
 
 == Installation ==
 
-1. Install and activate Open Access Toolbar from **Plugins > Add New**.
+1. Install and activate Readwell Bar from **Plugins > Add New**.
 2. The toolbar button appears on your site straight away, at the bottom right.
 3. Go to **Settings > Accessibility Toolbar** to choose the tools, position, size and color.
 4. Go to **Tools > Accessibility Check** and click **Check my content**.

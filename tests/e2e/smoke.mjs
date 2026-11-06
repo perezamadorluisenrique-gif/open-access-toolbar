@@ -234,7 +234,7 @@ if ( SHOTS ) {
 }
 
 // Settings: position, a removed tool, the site fixes.
-await page.goto( `${ BASE }/wp-admin/options-general.php?page=open-access-toolbar` );
+await page.goto( `${ BASE }/wp-admin/options-general.php?page=readwell-bar` );
 if ( SHOTS ) await page.screenshot( { path: join( SHOTS, 'screenshot-2.png' ) } );
 await page.selectOption( '#oatb-position', 'top-left' );
 await page.uncheck( 'input[value="grayscale"]' );
@@ -268,7 +268,7 @@ const target = await page.evaluate( () => document.activeElement && document.act
 check( target === 'MAIN', `skip link moves focus to main (${ target })` );
 
 // Statement page.
-await page.goto( `${ BASE }/wp-admin/options-general.php?page=open-access-toolbar` );
+await page.goto( `${ BASE }/wp-admin/options-general.php?page=readwell-bar` );
 await page.click( 'form[action*="admin-post.php"] input[type=submit]' );
 await page.waitForURL( /post\.php\?post=\d+&action=edit/ );
 const statementId = Number( new URL( page.url() ).searchParams.get( 'post' ) );
@@ -295,15 +295,15 @@ const plain = await ( await fetch( postUrl ) ).text();
 check( ! /oatb/.test( plain ), 'everything off: no plugin assets on the page' );
 
 // Uninstall cleans up its options.
-wp( 'plugin deactivate open-access-toolbar' );
-wp( 'plugin uninstall open-access-toolbar --skip-delete' );
+wp( 'plugin deactivate readwell-bar' );
+wp( 'plugin uninstall readwell-bar --skip-delete' );
 check( wp( 'option list --search=oatb_* --field=option_name' ).split( '\n' ).filter( Boolean ).length === 0, 'uninstall removes its options' );
 execSync( `rm -f ${ pluginFile }` );
 
 check( errors.length === 0, `no JavaScript errors${ errors.length ? ': ' + errors.join( ' | ' ) : '' }` );
 const debugLog = join( WP_PATH, 'debug.log' );
 const log = existsSync( debugLog )
-	? readFileSync( debugLog, 'utf8' ).split( '\n' ).filter( ( l ) => /PHP (Fatal|Parse)/.test( l ) || ( /PHP (Notice|Warning|Deprecated)/.test( l ) && /plugins\/open-access-toolbar\//.test( l ) ) )
+	? readFileSync( debugLog, 'utf8' ).split( '\n' ).filter( ( l ) => /PHP (Fatal|Parse)/.test( l ) || ( /PHP (Notice|Warning|Deprecated)/.test( l ) && /plugins\/readwell-bar\//.test( l ) ) )
 	: [];
 check( log.length === 0, `no PHP errors, and no warnings or notices from the plugin${ log.length ? ': ' + log.join( ' | ' ) : '' }` );
 

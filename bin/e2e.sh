@@ -28,7 +28,7 @@ SQLITE_SRC="$CACHE/sqlite/packages/plugin-sqlite-database-integration"
 [ -d "$SQLITE_SRC" ] || SQLITE_SRC="$CACHE/sqlite"
 cp -rL "$SQLITE_SRC" "$SITE/wp-content/plugins/sqlite-database-integration"
 sed "s#{SQLITE_IMPLEMENTATION_FOLDER_PATH}#$SITE/wp-content/plugins/sqlite-database-integration#" "$SITE/wp-content/plugins/sqlite-database-integration/db.copy" > "$SITE/wp-content/db.php"
-cp -r build/open-access-toolbar "$SITE/wp-content/plugins/open-access-toolbar"
+cp -r build/readwell-bar "$SITE/wp-content/plugins/readwell-bar"
 mkdir -p "$SITE/wp-content/database"
 cat > "$SITE/wp-config.php" <<PHP
 <?php
@@ -48,7 +48,7 @@ PHP
 
 WP="php $CACHE/wp-cli.phar --allow-root --path=$SITE"
 $WP core install --url="$URL" --title=E2E --admin_user=admin --admin_password=admin --admin_email=admin@example.com --skip-email >/dev/null 2>&1
-$WP plugin activate open-access-toolbar >/dev/null 2>&1
+$WP plugin activate readwell-bar >/dev/null 2>&1
 MODE="single site"
 echo "WordPress $($WP core version 2>/dev/null) ($MODE) on SQLite at $URL"
 

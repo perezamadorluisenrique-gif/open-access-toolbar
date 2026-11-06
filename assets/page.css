@@ -1,5 +1,5 @@
 /*
- * Open Access Toolbar: styles applied to the page when a visitor turns a tool on.
+ * Readwell Bar: styles applied to the page when a visitor turns a tool on.
  * Every rule is scoped to a class on <html>, so nothing changes until a tool is used.
  * The toolbar lives in a shadow root (#oatb-root) and is excluded from these rules.
  */
